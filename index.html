@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROSE BOUTIQUE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div class="cintilla">
+    <div class="texto-cintilla">
+        ✨ Contamos con sistema de apartado ✨
+        &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+        💕 Pregunta por nuestros modelos
+        &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+        📱 Sigue nuestras redes
+        &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+        🛍️ Precios por mayoreo
+        &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+    </div>
+    
+<section id="asistente-tallas">
+    <h2>🌹 Asistente Rose</h2>
+    <p>¿No sabes qué talla elegir? ¡Nosotras te ayudamos! 💕</p>
+
+    <button id="abrir-asistente">
+        ✨ Encontrar mi talla
+    </button>
+</section>
+<div id="ventana-asistente" class="ventana-asistente">
+    <div class="contenido-asistente">
+        <button id="cerrar-asistente" class="cerrar-asistente">✕</button>
+
+        <h2>🌹 Asistente Rose</h2>
+
+        <p>
+            ¡Hola! 💕 Estoy aquí para ayudarte a encontrar
+            tu talla.
+        </p>
+
+        <p>
+            Primero vamos a conocer un poquito tus medidas.
+        </p>
+
+        <button id="comenzar-asistente">
+            💗 Comenzar
+        </button>
+        <div id="preguntas-asistente" style="display: none;">
+
+    <h3>💕 Encuentra tu talla</h3>
+
+    <p>
+        Ingresa tus medidas en centímetros.
+        Esta recomendación es orientativa.
+    </p>
+
+    <label for="busto-asistente">Contorno de busto:</label>
+    <input
+        type="number"
+        id="busto-asistente"
+        placeholder="Ejemplo: 90"
+        min="1"
+    >
+
+    <label for="cintura-asistente">Contorno de cintura:</label>
+    <input
+        type="number"
+        id="cintura-asistente"
+        placeholder="Ejemplo: 70"
+        min="1"
+    >
+
+    <label for="cadera-asistente">Contorno de cadera:</label>
+    <input
+        type="number"
+        id="cadera-asistente"
+        placeholder="Ejemplo: 95"
+        min="1"
+    >
+
+    <button id="calcular-talla">
+        ✨ Encontrar mi talla
+    </button>
+
+    <p id="resultado-talla"></p>
+
+</div>
+    </div>
+</div>
+</div>
+    <header>
+    <h1>ROSE BOUTIQUE</h1>
+    <img src="images/hero.jpeg" alt="Colección de moda de Rose Boutique">
+
+<div class="linea-marca"></div>
+    <p>Moda que va contigo</p>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#coleccion">Colección</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <div id="carrito">
+    🛍️ <span id="contador-carrito">0</span>
+    <span id="total-carrito">$0 MXN</span>
+    <button id="vaciar-carrito">Vaciar</button>
+</div>
+</div>
+</div>
+</header>
+<section id="inicio">
+
+    <h2>Nueva temporada</h2>
+
+    <p>
+        Descubre prendas que combinan estilo, comodidad y personalidad.
+    </p>
+
+    <a href="#coleccion">Ver colección</a>
+
+</section>
+<section id="coleccion">
+
+    <h2>Nuestra colección</h2>
+    <p class="detalle-temporada">
+    COLECCIÓN OTOÑO · 2026
+</p>
+
+    <p>Conoce algunas de nuestras prendas favoritas.</p>
+
+    <article class="tarjeta-vestidos">
+    
+</div>
+
+        <div class="contenido-tarjeta">
+            <h3>Vestidos</h3>
+            <p>Diseños femeninos para cada ocasión.</p>
+            <span class="precio">$899 MXN</span>
+            <div class="opciones-producto">
+
+    <label for="color-vestido">Color:</label>
+    <select id="color-vestido">
+        <option value="Negro">Negro</option>
+        <option value="Rosa">Rosa</option>
+    </select>
+
+    <label for="talla-vestido">Talla:</label>
+    <select id="talla-vestido">
+        <option value="CH">Chica (CH)</option>
+        <option value="M">Mediana (M)</option>
+        <option value="G">Grande (G)</option>
+        <option value="XG">Extra grande (XG)</option>
+    </select>
+
+</div>
+</a>
+            <a href="#mi-compra" class="boton-comprar">Comprar</a>
+        </div>
+
+    </article>
+
+    <article class="tarjeta-blusas">
+
+        <div class="contenido-tarjeta">
+            <h3>Blusas</h3>
+            <p>Estilos versátiles para complementar tu look.</p>
+            <span class="precio">$540 MXN</span>
+            <div class="opciones-producto">
+
+    <label for="color-blusa">Color:</label>
+    <select id="color-blusa">
+        <option value="Blanco">Blanco</option>
+        <option value="Rosa">Rosa</option>
+    </select>
+
+    <label for="talla-blusa">Talla:</label>
+    <select id="talla-blusa">
+        <option value="CH">Chica (CH)</option>
+        <option value="M">Mediana (M)</option>
+        <option value="G">Grande (G)</option>
+        <option value="XG">Extra grande (XG)</option>
+    </select>
+
+</div>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+
+    </article>
+
+    <article class="tarjeta-conjuntos">
+
+        <div class="contenido-tarjeta">
+            <h3>Conjuntos</h3>
+            <p>Looks completos, cómodos y llenos de estilo.</p>
+            <span class="precio">$1,099 MXN</span>
+            <div class="opciones-producto">
+
+    <label for="color-conjunto">Color:</label>
+    <select id="color-conjunto">
+        <option value="Beige">Beige</option>
+        <option value="Negro">Negro</option>
+    </select>
+
+    <label for="talla-conjunto">Talla:</label>
+    <select id="talla-conjunto">
+        <option value="CH">Chica (CH)</option>
+        <option value="M">Mediana (M)</option>
+        <option value="G">Grande (G)</option>
+        <option value="XG">Extra grande (XG)</option>
+    </select>
+
+</div>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+
+    </article>
+
+    <article class="tarjeta-pantalones">
+
+        <div class="contenido-tarjeta">
+            <h3>Pantalones</h3>
+            <p>Prendas que combinan comodidad y tendencia.</p>
+            <span class="precio">$749 MXN</span>
+            <div class="opciones-producto">
+
+    <label for="color-pantalon">Color:</label>
+    <select id="color-pantalon">
+        <option value="Azul">Azul</option>
+        <option value="Negro">Negro</option>
+    </select>
+
+    <label for="talla-pantalon">Talla:</label>
+    <select id="talla-pantalon">
+        <option value="CH">Chica (CH)</option>
+        <option value="M">Mediana (M)</option>
+        <option value="G">Grande (G)</option>
+        <option value="XG">Extra grande (XG)</option>
+    </select>
+
+</div>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+
+    </article>
+
+</section>
+<section id="nosotros">
+    <img src="images/nosotros.jpeg" alt="Estilo de Rose Boutique">
+
+    <h2>Sobre Rose Boutique</h2>
+
+    <p>
+       <p class="frase-destacada">
+    Vestirte también es una forma de decir quién eres.
+</p>
+    </p>
+
+    <p>
+        Nuestro objetivo es ofrecer una experiencia de compra cercana,
+        donde cada mujer pueda encontrar prendas con las que se sienta
+        cómoda, segura y auténtica.
+    </p>
+
+</section>
+</section>
+
+<section id="mi-compra">
+    <h2>Mi compra</h2>
+
+    <div id="lista-compra">
+        <p>Aún no has agregado productos a tu carrito.</p>
+    </div>
+
+    <div class="resumen-compra">
+        <h3>Total: <span id="total-compra">$0 MXN</span></h3>
+
+        <button id="boton-pagar" class="boton-comprar">
+            Continuar al pago
+        </button>
+    </div>
+</section>
+<section id="contacto">
+
+    <h2>Contáctanos</h2>
+
+    <p>¿Tienes alguna pregunta? Escríbenos.</p>
+    <a href="https://wa.me/524491142319" target="_blank" class="boton-whatsapp">
+    💬 Contáctanos por WhatsApp
+</a>
+<a href="https://www.facebook.com/share/1Homea9cNZ/?mibextid=wwXIfr" target="_blank" class="boton-facebook">
+    📘 Síguenos en Facebook
+</a>
+
+    <form id="formulario-contacto">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+
+    </form>
+
+</section>
+<footer>
+    <p>© 2026 Rose Boutique. Todos los derechos reservados.</p>
+    <p>Moda femenina con estilo y personalidad.</p>
+</footer>
+<script src="script.js"></script>
+
+<footer class="pie-pagina">
+
+    <h2>🌹 ROSE BOUTIQUE</h2>
+
+    <p>Moda que va contigo</p>
+
+   <div class="footer-bloque">
+    <h4>Información de compra</h4>
+
+    <a href="#politica-compra">Políticas de compra</a>
+    <a href="#politica-devoluciones">Cambios y devoluciones</a>
+</div>
+    </div>
+
+    <p class="copyright">
+        © 2026 Rose Boutique. Todos los derechos reservados.
+    </p>
+</footer>
+<section id="politica-compra" class="politica">
+
+    <h2>Políticas de compra</h2>
+
+    <p>
+        En Rose Boutique buscamos ofrecer una experiencia de compra
+        clara, segura y transparente.
+    </p>
+
+    <h3>1. Información del producto</h3>
+
+    <p>
+        Las características, precios, disponibilidad, tallas y demás
+        condiciones de los productos se mostrarán de manera clara
+        antes de realizar la compra.
+    </p>
+
+    <h3>2. Precio y pago</h3>
+
+    <p>
+        El precio mostrado corresponde al producto indicado y se
+        informarán, en su caso, los costos adicionales aplicables,
+        incluyendo gastos de envío.
+    </p>
+
+    <h3>3. Confirmación de compra</h3>
+
+    <p>
+        Una vez realizada una compra, se proporcionará al consumidor
+        la información correspondiente a su pedido y comprobante de
+        la operación.
+    </p>
+
+    <h3>4. Disponibilidad</h3>
+
+    <p>
+        La disponibilidad de los productos estará sujeta a existencia.
+        En caso de presentarse alguna situación que impida cumplir
+        con la operación en los términos ofrecidos, se informará al
+        consumidor y se procederá conforme a la legislación aplicable.
+    </p>
+
+    <h3>5. Derecho de revocación</h3>
+
+    <p>
+        En las operaciones realizadas mediante medios electrónicos,
+        el consumidor podrá ejercer los derechos de revocación que
+        correspondan conforme a la Ley Federal de Protección al
+        Consumidor.
+    </p>
+
+</section>
+<section id="politica-devoluciones" class="politica">
+
+    <h2>Cambios, devoluciones y reembolsos</h2>
+
+    <p>
+        En Rose Boutique atendemos las solicitudes de cambios,
+        devoluciones y reembolsos de conformidad con las condiciones
+        ofrecidas al consumidor y con la legislación mexicana
+        aplicable.
+    </p>
+
+    <h3>Productos con defecto o que no correspondan al pedido</h3>
+
+    <p>
+        Si el producto recibido presenta defectos, deficiencias o no
+        corresponde con las características, calidad o especificaciones
+        bajo las cuales fue ofrecido o adquirido, el consumidor podrá
+        ejercer los derechos que correspondan conforme a la Ley Federal
+        de Protección al Consumidor.
+    </p>
+
+    <h3>Solicitud de devolución</h3>
+
+    <p>
+        Para solicitar una devolución o aclaración, el consumidor
+        deberá ponerse en contacto con Rose Boutique mediante los
+        medios de contacto disponibles en este sitio, proporcionando
+        la información necesaria para identificar la compra.
+    </p>
+
+    <h3>Reembolso</h3>
+
+    <p>
+        Cuando legalmente corresponda un reembolso, éste se realizará
+        conforme a las disposiciones aplicables y a las condiciones
+        de la operación.
+    </p>
+
+    <h3>Derechos del consumidor</h3>
+
+    <p>
+        Ninguna disposición de estas políticas pretende limitar,
+        excluir o renunciar a los derechos que la legislación mexicana
+        reconoce a las personas consumidoras.
+    </p>
+
+</section>
+</body>
+</html>

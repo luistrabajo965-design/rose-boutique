@@ -259,6 +259,55 @@ if (vaciarCarrito) {
     });
 
 }
+// BOTÓN CONTINUAR CON EL PAGO - WHATSAPP
+
+const continuarCompra = document.getElementById("continuar-compra");
+console.log("Botón de compra:", continuarCompra);
+
+if (continuarCompra) {
+
+    continuarCompra.addEventListener("click", function(evento) {
+
+        evento.preventDefault();
+
+        if (productosCarrito.length === 0) {
+
+            alert("💕 Tu carrito está vacío. Agrega algún producto antes de continuar.");
+
+            return;
+        }
+
+        let mensaje = "🌹 *NUEVO PEDIDO - ROSE BOUTIQUE* 🌹\n\n";
+
+        productosCarrito.forEach(function(producto, indice) {
+
+            mensaje +=
+                "🛍️ *Producto " + (indice + 1) + "*\n" +
+                "Nombre: " + producto.nombre + "\n" +
+                "Precio: $" + producto.precio + " MXN\n" +
+                "Color: " + producto.color + "\n" +
+                "Talla: " + producto.talla + "\n\n";
+
+        });
+
+        mensaje +=
+            "💰 *TOTAL: $" + totalCarrito + " MXN*\n\n" +
+            "💕 Hola, quiero continuar con mi compra en Rose Boutique.\n" +
+            "¿Me pueden ayudar con los detalles del pago y envío?";
+
+        const numeroWhatsApp = "524491142319";
+
+        const enlaceWhatsApp =
+            "https://wa.me/" +
+            numeroWhatsApp +
+            "?text=" +
+            encodeURIComponent(mensaje);
+
+        window.open(enlaceWhatsApp, "_blank");
+
+    });
+
+}
 
 
 // Mostrar el carrito vacío al cargar la página
@@ -269,9 +318,18 @@ const abrirAsistente = document.getElementById("abrir-asistente");
 const ventanaAsistente = document.getElementById("ventana-asistente");
 const cerrarAsistente = document.getElementById("cerrar-asistente");
 
+const comenzarAsistente = document.getElementById("comenzar-asistente");
+const preguntasAsistente = document.getElementById("preguntas-asistente");
+
+const calcularTalla = document.getElementById("calcular-talla");
+const resultadoTalla = document.getElementById("resultado-talla");
+
+
+// ABRIR ASISTENTE
+
 if (abrirAsistente && ventanaAsistente) {
 
-    abrirAsistente.addEventListener("click", function() {
+    abrirAsistente.addEventListener("click", function () {
 
         ventanaAsistente.style.display = "flex";
 
@@ -279,21 +337,28 @@ if (abrirAsistente && ventanaAsistente) {
 
 }
 
+
+// CERRAR ASISTENTE
+// CERRAR ASISTENTE
+
 if (cerrarAsistente && ventanaAsistente) {
 
-    cerrarAsistente.addEventListener("click", function() {
+    cerrarAsistente.addEventListener("click", function (event) {
+
+        event.preventDefault();
 
         ventanaAsistente.style.display = "none";
 
     });
-    // MOSTRAR PREGUNTAS DEL ASISTENTE
 
-const comenzarAsistente = document.getElementById("comenzar-asistente");
-const preguntasAsistente = document.getElementById("preguntas-asistente");
+}
+
+
+// MOSTRAR PREGUNTAS DEL ASISTENTE
 
 if (comenzarAsistente && preguntasAsistente) {
 
-    comenzarAsistente.addEventListener("click", function() {
+    comenzarAsistente.addEventListener("click", function () {
 
         preguntasAsistente.style.display = "block";
 
@@ -302,18 +367,25 @@ if (comenzarAsistente && preguntasAsistente) {
     });
 
 }
-// CALCULAR TALLA DEL ASISTENTE ROSE
 
-const calcularTalla = document.getElementById("calcular-talla");
-const resultadoTalla = document.getElementById("resultado-talla");
+
+// CALCULAR TALLA DEL ASISTENTE ROSE
 
 if (calcularTalla && resultadoTalla) {
 
-    calcularTalla.addEventListener("click", function() {
+    calcularTalla.addEventListener("click", function () {
 
-        const busto = Number(document.getElementById("busto-asistente").value);
-        const cintura = Number(document.getElementById("cintura-asistente").value);
-        const cadera = Number(document.getElementById("cadera-asistente").value);
+        const busto = Number(
+            document.getElementById("busto-asistente").value
+        );
+
+        const cintura = Number(
+            document.getElementById("cintura-asistente").value
+        );
+
+        const cadera = Number(
+            document.getElementById("cadera-asistente").value
+        );
 
         if (busto <= 0 || cintura <= 0 || cadera <= 0) {
 
@@ -327,22 +399,29 @@ if (calcularTalla && resultadoTalla) {
         let talla = "";
 
         if (busto <= 84 && cintura <= 64 && cadera <= 90) {
+
             talla = "XS";
 
         } else if (busto <= 89 && cintura <= 69 && cadera <= 95) {
+
             talla = "S";
 
         } else if (busto <= 94 && cintura <= 74 && cadera <= 100) {
+
             talla = "M";
 
         } else if (busto <= 101 && cintura <= 81 && cadera <= 107) {
+
             talla = "L";
 
         } else if (busto <= 109 && cintura <= 90 && cadera <= 116) {
+
             talla = "XL";
 
         } else {
+
             talla = "Por confirmar";
+
         }
 
         if (talla === "Por confirmar") {
@@ -361,4 +440,112 @@ if (calcularTalla && resultadoTalla) {
     });
 
 }
+// CONTINUAR CON LA COMPRA POR WHATSAPP
+
+function activarBotonWhatsApp() {
+
+    const botonCompra =
+        document.getElementById("continuar-compra") ||
+        document.getElementById("boton-pagar");
+
+    if (!botonCompra) {
+        console.log("No se encontró el botón de pago.");
+        return;
+    }
+
+    botonCompra.addEventListener("click", function (evento) {
+
+        evento.preventDefault();
+
+        if (
+            typeof productosCarrito === "undefined" ||
+            !Array.isArray(productosCarrito) ||
+            productosCarrito.length === 0
+        ) {
+
+            alert("💕 Tu carrito está vacío. Agrega un producto primero.");
+            return;
+
+        }
+
+        let mensaje = "🌹 *NUEVO PEDIDO - ROSE BOUTIQUE* 🌹\n\n";
+        let total = 0;
+
+        productosCarrito.forEach(function (producto, indice) {
+
+            mensaje +=
+                "🛍️ *Producto " + (indice + 1) + "*\n" +
+                "Nombre: " + (producto.nombre || "Sin nombre") + "\n" +
+                "Precio: $" + (producto.precio || 0) + " MXN\n" +
+                "Color: " + (producto.color || "No especificado") + "\n" +
+                "Talla: " + (producto.talla || "No especificada") + "\n\n";
+
+            total += Number(producto.precio) || 0;
+
+        });
+
+        mensaje +=
+            "💰 *TOTAL: $" + total + " MXN*\n\n" +
+            "💕 Hola, quiero continuar con mi compra en Rose Boutique.\n" +
+            "¿Me pueden ayudar con los detalles del pago y envío?";
+
+        const numeroWhatsApp = "524491142319";
+
+        const enlaceWhatsApp =
+            "https://wa.me/" +
+            numeroWhatsApp +
+            "?text=" +
+            encodeURIComponent(mensaje);
+console.log("ENLACE GENERADO:", enlaceWhatsApp);
+        window.location.href = enlaceWhatsApp;
+
+    });
+
 }
+
+if (document.readyState === "loading") {
+
+    document.addEventListener("DOMContentLoaded", activarBotonWhatsApp);
+
+} else {
+
+    activarBotonWhatsApp();
+
+}
+
+// PARCHE DE CIERRE DEL ASISTENTE ROSE
+// No modifica el carrito ni WhatsApp
+
+document.addEventListener("click", function (evento) {
+
+    const botonCerrar = evento.target.closest(".cerrar-asistente");
+
+    if (botonCerrar) {
+
+        const ventana = document.getElementById("ventana-asistente");
+
+        if (ventana) {
+            ventana.style.display = "none";
+        }
+
+    }
+
+});
+// CIERRE DEL ASISTENTE ROSE - COMPATIBLE CON CELULAR
+
+document.addEventListener("click", function (evento) {
+
+    const boton = evento.target.closest("#cerrar-asistente, .cerrar-asistente");
+
+    if (!boton) return;
+
+    evento.preventDefault();
+    evento.stopPropagation();
+
+    const ventana = document.getElementById("ventana-asistente");
+
+    if (ventana) {
+        ventana.style.display = "none";
+    }
+
+});
